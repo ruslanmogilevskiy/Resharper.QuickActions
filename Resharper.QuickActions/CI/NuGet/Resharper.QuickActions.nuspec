@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>Resharper.QuickActions</id>
-		<version>1.0.1</version>
+		<version>1.1.0</version>
 		<title>Quick actions</title>
 		<authors>Ruslan Mogilevskiy</authors>
 		<copyright>(c) Ruslan Mogilevskiy</copyright>
