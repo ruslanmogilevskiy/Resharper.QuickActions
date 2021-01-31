@@ -6,13 +6,10 @@ namespace Resharper.QuickActions.Models
     {
         public ICSharpTypeDeclaration ContainingType { get; set; }
 
-        public IClassMemberDeclaration SelectedMember { get; set; }
+        /// <summary>Code member under the mouse cursor.</summary>
+        public ICSharpTypeMemberDeclaration SelectedCodeElement { get; set; }
 
-        public SelectedMemberPart SelectedMemberPart { get; set; }
-    }
-
-    public enum SelectedMemberPart
-    {
-        Name
+        /// <summary>Member focused part under the mouse cursor.</summary>
+        public MemberFocusedPart MemberFocusedPart { get; set; }
     }
 }

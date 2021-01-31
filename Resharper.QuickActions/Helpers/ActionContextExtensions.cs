@@ -9,26 +9,21 @@ namespace Resharper.QuickActions.Helpers
     {
         public static ActionContext GetActionContext(this ICSharpContextActionDataProvider provider)
         {
-            var member = GetSelectedMemberDeclaration(provider);
+            var selectedTreeNode = provider.SelectedElement as ICSharpTypeMemberDeclaration;
             var context = new ActionContext
             {
-                ContainingType = member?.GetContainingTypeDeclaration(),
-                SelectedMember = member
+                ContainingType = selectedTreeNode?.GetContainingTypeDeclaration(),
+                SelectedCodeElement = selectedTreeNode
             };
-
-            var selectedTreeNode = provider.SelectedElement;
-            if (selectedTreeNode != null && member.GetNameDocumentRange().Contains(selectedTreeNode.GetDocumentRange()))
+            if (selectedTreeNode != null)
             {
-                context.SelectedMemberPart = SelectedMemberPart.Name;
+                if (selectedTreeNode.GetNameDocumentRange().Contains(provider.DocumentCaret))
+                {
+                    context.MemberFocusedPart = MemberFocusedPart.Name;
+                }
             }
 
             return context;
-        }
-
-        static IClassMemberDeclaration GetSelectedMemberDeclaration(ICSharpContextActionDataProvider provider)
-        {
-            return (IClassMemberDeclaration)provider.GetSelectedElement<IMethodDeclaration>() ??
-                   provider.GetSelectedElement<IPropertyDeclaration>();
         }
     }
 }

@@ -326,8 +326,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actions\Base\ClonableContextAction.cs" />
+    <Compile Include="Actions\Base\CloneableTypeContextAction.cs" />
+    <Compile Include="Actions\Base\CloneableMemberContextAction.cs" />
     <Compile Include="Actions\Base\GenericContextAction.cs" />
+    <Compile Include="Actions\CloneType.cs" />
     <Compile Include="Actions\CloneProperty.cs" />
     <Compile Include="Actions\CloneMethod.cs" />
     <Compile Include="Constants.cs" />
@@ -335,6 +337,7 @@
     <Compile Include="Helpers\ActionContextExtensions.cs" />
     <Compile Include="Helpers\FormatExtensions.cs" />
     <Compile Include="Models\ActionContext.cs" />
+    <Compile Include="Models\MemberFocusedPart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <None Include="CI\NuGet\pack.cmd" />
     <None Include="CI\NuGet\Resharper.QuickActions.nuspec" />

@@ -3,12 +3,11 @@ using JetBrains.ReSharper.Feature.Services.CSharp.Analyses.Bulbs;
 using JetBrains.Util;
 using Resharper.QuickActions.Actions.Base;
 using Resharper.QuickActions.Helpers;
-using Resharper.QuickActions.Models;
 
 namespace Resharper.QuickActions.Actions
 {
-    [ContextAction(Name = ActionName, Description = "Clones selected method", Group = "C#")]
-    public class CloneMethod : ClonableContextAction
+    [ContextAction(Name = ActionName, Description = "Clones focused method", Group = Constants.Languages.CSharp)]
+    public class CloneMethod : CloneableMemberContextAction
     {
         const string ActionName = "Clone method";
 
@@ -19,7 +18,7 @@ namespace Resharper.QuickActions.Actions
         public override bool IsAvailable(IUserDataHolder bag)
         {
             var context = GetContext();
-            return context?.SelectedMember?.IsMethod() == true && context.SelectedMemberPart == SelectedMemberPart.Name;
+            return context?.SelectedCodeElement?.IsMethod() == true;
         }
     }
 }
