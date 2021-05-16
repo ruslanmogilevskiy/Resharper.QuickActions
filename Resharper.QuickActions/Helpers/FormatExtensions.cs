@@ -6,7 +6,7 @@ using JetBrains.ReSharper.Psi.CodeStyle;
 using JetBrains.ReSharper.Psi.CSharp.CodeStyle;
 using JetBrains.ReSharper.Psi.Tree;
 
-namespace Resharper.QuickActions.Helpers
+namespace Rumo.Resharper.QuickActions.Helpers
 {
     public static class FormatExtensions
     {

@@ -1,15 +1,16 @@
-﻿using JetBrains.ReSharper.Psi.CSharp.Tree;
+﻿using JetBrains.ReSharper.Psi.Tree;
 
-namespace Resharper.QuickActions.Models
+namespace Rumo.Resharper.QuickActions.Models
 {
     public class ActionContext
     {
-        public ICSharpTypeDeclaration ContainingType { get; set; }
-
         /// <summary>Code member under the mouse cursor.</summary>
-        public ICSharpTypeMemberDeclaration SelectedCodeElement { get; set; }
+        public ITreeNode SelectedCodeElement { get; set; }
 
-        /// <summary>Member focused part under the mouse cursor.</summary>
+        /// <summary>Whether a member's body declaration is selected. Supports member and class declarations.</summary>
+        public bool IsBodyDeclarationSelected { get; set; }
+
+        /// <summary>The member's focused part under the mouse cursor.</summary>
         public MemberFocusedPart MemberFocusedPart { get; set; }
     }
 }

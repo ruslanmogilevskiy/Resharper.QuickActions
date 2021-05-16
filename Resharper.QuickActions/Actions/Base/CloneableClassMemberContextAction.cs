@@ -8,23 +8,27 @@ using Rumo.Resharper.QuickActions.Helpers;
 
 namespace Rumo.Resharper.QuickActions.Actions.Base
 {
-    public abstract class CloneableTypeContextAction : CloneableContextActionBase
+    public abstract class CloneableClassMemberContextAction : CloneableContextActionBase
     {
-        protected CloneableTypeContextAction(string actionName, ICSharpContextActionDataProvider provider) : base(actionName, provider)
+        protected CloneableClassMemberContextAction(string actionName, ICSharpContextActionDataProvider provider) : base(actionName, provider)
         {
         }
 
         protected override Action<ITextControl> ExecutePsiTransaction(ISolution solution, IProgressIndicator progress)
         {
             var context = GetContext();
-            var typeToClone = (IClassDeclaration) GetDeclarationToClone(context);
-            var selectedElementCode = typeToClone?.GetText();
+            var memberToClone = GetDeclarationToClone(context);
+            var selectedElementCode = memberToClone?.GetText();
             // Note: skip if we cannot get the selected member`s source code.
             if (string.IsNullOrEmpty(selectedElementCode))
                 return null;
 
+            var containingClass = memberToClone.GetParentClass();
+            if (containingClass == null)
+                return null;
+
             var cloneDeclaration = (IClassMemberDeclaration) Provider.ElementFactory.CreateTypeMemberDeclaration(selectedElementCode);
-            var result = typeToClone.AddClassMemberDeclarationBefore(cloneDeclaration, typeToClone);
+            var result = containingClass.AddClassMemberDeclarationBefore(cloneDeclaration, memberToClone);
             result.Format();
 
             return null;

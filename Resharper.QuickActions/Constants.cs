@@ -1,4 +1,4 @@
-﻿namespace Resharper.QuickActions
+﻿namespace Rumo.Resharper.QuickActions
 {
     public static class Constants
     {
