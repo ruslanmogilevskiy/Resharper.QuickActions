@@ -1,7 +1,10 @@
-﻿namespace Resharper.QuickActions
+﻿namespace Rumo.Resharper.QuickActions
 {
     public static class Constants
     {
-        public const string PluginName = "Clone method";
+        public class Languages
+        {
+            public const string CSharp = "C#";
+        }
     }
 }
