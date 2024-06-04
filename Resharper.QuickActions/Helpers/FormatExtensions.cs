@@ -44,9 +44,9 @@ namespace Rumo.Resharper.QuickActions.Helpers
                 return;
             }
 
-            var rangeMarker = new DocumentRange(document, documentRange.TextRange).CreateRangeMarker(DocumentManager.GetInstance(solution));
+            var rangeMarker = new DocumentRange(document, documentRange.TextRange).CreateProjectAwareRangeMarker(solution);
 
-            containingFile.OptimizeImportsAndRefs(rangeMarker, false, true, NullProgressIndicator.Instance);
+            languageService.OptimizeImportsAndRefs(containingFile, rangeMarker, false, true, NullProgressIndicator.Create());
             codeFormatter.Format(statement, CodeFormatProfile.DEFAULT);
         }
     }
