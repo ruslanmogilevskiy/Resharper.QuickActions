@@ -4,10 +4,10 @@
 
 /.localhistory/*
 /.vs/*
-*/obj/*
-*/bin/*
+**/obj/*
+**/bin/*
 *.user
-/packages
+**/packages
 *.nupkg
 **/.vshistory/**
 **/.vs

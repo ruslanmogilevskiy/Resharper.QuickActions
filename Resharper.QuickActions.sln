@@ -1,17 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31129.286
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resharper.QuickActions", "Resharper.QuickActions\Resharper.QuickActions.csproj", "{C472A182-29CD-4733-B556-C8364E5AC780}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resharper.QuickActions", "src\Resharper.QuickActions\Resharper.QuickActions.csproj", "{C472A182-29CD-4733-B556-C8364E5AC780}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CI", "CI", "{7D9BEE8F-37AD-4E14-861B-B99A3B06BA4F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{502F07B6-6BBF-4323-A9A0-EAF08853DBDE}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B6E5E2A-B6FB-4108-8FC0-7848F3178EE6}"
 	ProjectSection(SolutionItems) = preProject
-		CI\nuget\pack.cmd = CI\nuget\pack.cmd
-		CI\nuget\publish.cmd = CI\nuget\publish.cmd
-		CI\nuget\Resharper.QuickActions.nuspec = CI\nuget\Resharper.QuickActions.nuspec
+		.gitignore = .gitignore
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{E7B90AF2-69A5-4731-9202-80E3F039C7C2}"
+	ProjectSection(SolutionItems) = preProject
+		eng\ci\nuget\pack.cmd = eng\ci\nuget\pack.cmd
+		eng\ci\nuget\publish.cmd = eng\ci\nuget\publish.cmd
+		eng\ci\nuget\Resharper.QuickActions.nuspec = eng\ci\nuget\Resharper.QuickActions.nuspec
 	EndProjectSection
 EndProject
 Global
@@ -29,7 +34,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{502F07B6-6BBF-4323-A9A0-EAF08853DBDE} = {7D9BEE8F-37AD-4E14-861B-B99A3B06BA4F}
+		{E7B90AF2-69A5-4731-9202-80E3F039C7C2} = {0B6E5E2A-B6FB-4108-8FC0-7848F3178EE6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F3538DF-5EC3-478D-B357-AEF3050F312A}

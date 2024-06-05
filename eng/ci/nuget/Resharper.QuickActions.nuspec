@@ -15,7 +15,7 @@
 		</dependencies>
 	</metadata>
 	<files>
-		<file src="..\..\Resharper.QuickActions\bin\debug\Rumo.Resharper.QuickActions.dll" target="DotFiles" />
-		<file src="..\..\Resharper.QuickActions\bin\debug\Rumo.Resharper.QuickActions.pdb" target="DotFiles" />
+		<file src="..\..\..\src\Resharper.QuickActions\bin\debug\Rumo.Resharper.QuickActions.dll" target="DotFiles" />
+		<file src="..\..\..\src\Resharper.QuickActions\bin\debug\Rumo.Resharper.QuickActions.pdb" target="DotFiles" />
 	</files>
 </package>

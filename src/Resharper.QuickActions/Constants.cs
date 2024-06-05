@@ -1,6 +1,6 @@
 ﻿namespace Rumo.Resharper.QuickActions
 {
-    public static class Constants
+    static class Constants
     {
         public class Languages
         {
