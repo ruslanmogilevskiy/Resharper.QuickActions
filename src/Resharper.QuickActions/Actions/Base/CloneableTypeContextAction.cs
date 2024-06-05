@@ -19,7 +19,7 @@ namespace Rumo.Resharper.QuickActions.Actions.Base
             var context = GetContext();
             var typeToClone = (IClassDeclaration) GetDeclarationToClone(context);
             var selectedElementCode = typeToClone?.GetText();
-            // Note: skip if we cannot get the selected member`s source code.
+            // Note: skip if we cannot get the selected member's source code.
             if (string.IsNullOrEmpty(selectedElementCode))
                 return null;
 

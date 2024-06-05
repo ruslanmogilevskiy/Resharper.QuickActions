@@ -596,8 +596,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetDir)Rumo.Resharper.QuickActions.dll C:\Users\arm\AppData\Local\JetBrains\Installations\ReSharperPlatformVs16_c043a6d0test\
-copy $(TargetDir)Rumo.Resharper.QuickActions.pdb C:\Users\arm\AppData\Local\JetBrains\Installations\ReSharperPlatformVs16_c043a6d0test\</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

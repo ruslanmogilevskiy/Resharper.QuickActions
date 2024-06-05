@@ -52,7 +52,7 @@ namespace Rumo.Resharper.QuickActions.Helpers
             {
                 SelectedCodeElement = selectedElement,
                 IsBodyDeclarationSelected = IsBodyDeclarationSelected(selectedElement),
-                MemberFocusedPart = GetMemberFocusedPart(provider, selectedElement)
+                MemberFocusedPart = GetMemberFocusedPart(selectedElement)
             };
 
             return context;
@@ -64,13 +64,10 @@ namespace Rumo.Resharper.QuickActions.Helpers
                 return false;
 
             // method or class body
-            if (selectedElement.Parent is IBlock || selectedElement.Parent is IClassBody)
-                return true;
-
-            return false;
+            return selectedElement.Parent is IBlock || selectedElement.Parent is IClassBody;
         }
 
-        static MemberFocusedPart GetMemberFocusedPart(ICSharpContextActionDataProvider provider, ITreeNode selectedElement)
+        static MemberFocusedPart GetMemberFocusedPart(ITreeNode selectedElement)
         {
             if (selectedElement is IIdentifier && IsSupportedElement(selectedElement.Parent))
                 return MemberFocusedPart.Name;

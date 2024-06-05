@@ -3,7 +3,6 @@ using JetBrains.DocumentManagers;
 using JetBrains.DocumentModel;
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.CodeStyle;
-using JetBrains.ReSharper.Psi.CSharp.CodeStyle;
 using JetBrains.ReSharper.Psi.Tree;
 
 namespace Rumo.Resharper.QuickActions.Helpers
@@ -11,9 +10,8 @@ namespace Rumo.Resharper.QuickActions.Helpers
     public static class FormatExtensions
     {
         /// <summary>
-        ///     The format body.
+        /// Formats body of the specified statement.
         /// </summary>
-        /// <param name="statement">The body.</param>
         public static void Format(this ITreeNode statement)
         {
             if (!statement.IsPhysical())
@@ -45,7 +43,6 @@ namespace Rumo.Resharper.QuickActions.Helpers
             }
 
             var rangeMarker = new DocumentRange(document, documentRange.TextRange).CreateProjectAwareRangeMarker(solution);
-
             languageService.OptimizeImportsAndRefs(containingFile, rangeMarker, false, true, NullProgressIndicator.Create());
             codeFormatter.Format(statement, CodeFormatProfile.DEFAULT);
         }
