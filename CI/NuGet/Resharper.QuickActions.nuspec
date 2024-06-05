@@ -2,8 +2,8 @@
 <package >
 	<metadata>
 		<id>Resharper.QuickActions</id>
-		<version>2.0.0</version>
-		<title>Quick actions</title>
+		<version>3.0.0</version>
+		<title>Quick Actions</title>
 		<authors>Ruslan Mogilevskiy</authors>
 		<copyright>(c) Ruslan Mogilevskiy</copyright>
 		<description>Useful and quick context actions: clone type, method, property</description>
